@@ -16,3 +16,12 @@ img {
   display: block;
   max-width: 100%;
 }
+
+button[data-start], button[data-stop] {
+  width: 100px;
+  height: 60px;
+  border-radius: 6px;
+  border: 3px solid tomato;
+  font-size: 24px;
+  font-weight: 700;
+}
