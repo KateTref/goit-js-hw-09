@@ -33,6 +33,7 @@ button[data-start].btn-timer{
 .timer{
   display: flex;
   margin-top: 20px;
+  margin-left: 50px;
 }
 
 .field{
@@ -49,4 +50,9 @@ margin-right: 20px;
 .value {
 font-size: 28px;
 font-weight: 500;
+}
+
+input[type="text"]{
+  margin-left: 50px;
+  margin-top: 30px;
 }
