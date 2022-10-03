@@ -24,3 +24,29 @@ button[data-start], button[data-stop] {
   font-size: 24px;
   font-weight: 700;
 }
+
+button[data-start].btn-timer{
+  font-size: 16px;
+  border: 1px solid black; 
+}
+
+.timer{
+  display: flex;
+  margin-top: 20px;
+}
+
+.field{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-transform: uppercase;
+}
+
+.field:not(last-child) {
+margin-right: 20px;
+}
+
+.value {
+font-size: 28px;
+font-weight: 500;
+}
