@@ -14,8 +14,8 @@ formRef.addEventListener("submit", (event) => {
   for (let i = 0; i < amount; i += 1){
     numOfPosition += 1;
     createPromise(numOfPosition, delay)
-      .then(({ position, delay }) => Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`))
-      .catch(({ position, delay }) => Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`))
+      .then(({ position, delay }) => Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`, {position: 'center-center'}))
+      .catch(({ position, delay }) => Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`, {position: 'center-center'}))
       delay += step;
   }
 });
