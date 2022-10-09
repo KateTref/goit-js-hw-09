@@ -11,6 +11,10 @@ formRef.addEventListener("submit", (event) => {
   let delay = Number(inputDelayRef.value);
   const step = Number(inputStepRef.value);
   const amount = Number(inputAmountRef.value);
+  if (delay < 0 || step < 0 || amount < 0) {
+    alert("You can't use negative numbers!");
+    return
+  };
   for (let i = 0; i < amount; i += 1){
     numOfPosition += 1;
     createPromise(numOfPosition, delay)
