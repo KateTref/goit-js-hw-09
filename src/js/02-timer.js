@@ -2,6 +2,7 @@ import flatpickr from 'flatpickr';
 import "flatpickr/dist/flatpickr.min.css";
 import { Notify } from 'notiflix/build/notiflix-notify-aio'; 
 
+const inputRef = document.querySelector("#datetime-picker");
 const btnStart = document.querySelector("[data-start]");
 const timeDays = document.querySelector("[data-days]");
 const timeHours = document.querySelector("[data-hours]");
@@ -27,6 +28,7 @@ const options = {
     }
     btnStart.removeAttribute('disabled');
     btnStart.addEventListener("click", onClickStartTimer);
+    
     function onClickStartTimer() {
      options.intervalId = setInterval(() => {
      const currentTime = Date.now();
@@ -35,16 +37,16 @@ const options = {
   
        if (deltaTime <= 500) {
          clearInterval(intervalId);
-       }
+       }  
         const timer = convertMs(deltaTime);
         timeDays.textContent = addLeadingZero(timer.days); 
         timeHours.textContent = addLeadingZero(timer.hours);
         timeMinutes.textContent = addLeadingZero(timer.minutes);
        timeSeconds.textContent = addLeadingZero(timer.seconds);
      }, 1000); 
-      
+      btnStart.setAttribute("disabled", '');
+      inputRef.setAttribute("disabled", "true");
     }
-      
   },
 };
 

@@ -1,16 +1,13 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio'; 
 
 const formRef = document.querySelector(".form");
-const inputDelayRef = document.querySelector("[name=delay]");
-const inputStepRef = document.querySelector("[name=step]");
-const inputAmountRef = document.querySelector("[name=amount]");
 
 formRef.addEventListener("submit", (event) => {
   event.preventDefault();
   let numOfPosition = 0;
-  let delay = Number(inputDelayRef.value);
-  const step = Number(inputStepRef.value);
-  const amount = Number(inputAmountRef.value);
+  let delay = Number(event.currentTarget.delay.value);
+  const step = Number(event.currentTarget.step.value);
+  const amount = Number(event.currentTarget.amount.value);
   if (delay < 0 || step < 0 || amount < 0) {
     alert("You can't use negative numbers!");
     return

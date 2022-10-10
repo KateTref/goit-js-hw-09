@@ -10,14 +10,11 @@ btnStop.addEventListener('click', offChangeBgColor);
 btnStop.setAttribute("disabled", "");
 
 function onChangeBgColor() {
-    if (btnStop.hasAttribute("disabled")) {
-        btnStop.removeAttribute("disabled");
-    }
+    btnStop.removeAttribute("disabled");
     intervalId = setInterval(() => {
         document.body.style.backgroundColor = getRandomHexColor();
     }, DELAY);
     btnStart.setAttribute("disabled", "");
-
 }
 
 function offChangeBgColor() {
